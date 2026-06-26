@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga Infantil de Fútbol</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🏆 Liga Infantil - Panel de Control</h1>
+    </header>
+
+    <main class="container">
+        <section class="forms-section">
+            <div class="card">
+                <h2>Crear Nuevo Equipo</h2>
+                <form id="team-form">
+                    <div class="form-group">
+                        <label for="team-name">Nombre del Equipo:</label>
+                        <input type="text" id="team-name" placeholder="Ej. Los Tiburones" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="team-category">Categoría (Edad):</label>
+                        <input type="text" id="team-category" placeholder="Ej. Sub-10" required>
+                    </div>
+                    <button type="submit" class="btn">Registrar Equipo</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>Agregar Jugador</h2>
+                <form id="player-form">
+                    <div class="form-group">
+                        <label for="player-name">Nombre del Jugador:</label>
+                        <input type="text" id="player-name" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="player-age">Edad:</label>
+                        <input type="number" id="player-age" min="4" max="15" placeholder="Ej. 9" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="player-team">Asignar a Equipo:</label>
+                        <select id="player-team" required>
+                            <option value="" disabled selected>Selecciona un equipo</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Inscribir Jugador</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="display-section">
+            <h2>Estructura de la Liga</h2>
+            <div id="teams-container" class="teams-grid">
+                </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
