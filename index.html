@@ -3,63 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liga Infantil de Fútbol</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>FIFA 26 - Liga Infantil Admin</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <header>
-        <h1>🏆 Liga Infantil - Panel de Control</h1>
+
+    <header class="fifa-header">
+        <div class="logo-placeholder">FIFA 26 LIGA INFANTIL</div>
+        <nav>
+            <button id="btn-modulo-registro" class="nav-btn active" onclick="cambiarModulo('registro')">Registro</button>
+            <button id="btn-modulo-plantilla" class="nav-btn" onclick="cambiarModulo('plantilla')">Plantilla Completa</button>
+        </nav>
     </header>
 
     <main class="container">
-        <section class="forms-section">
-            <div class="card">
-                <h2>Crear Nuevo Equipo</h2>
-                <form id="team-form">
-                    <div class="form-group">
-                        <label for="team-name">Nombre del Equipo:</label>
-                        <input type="text" id="team-name" placeholder="Ej. Los Tiburones" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="team-category">Categoría (Edad):</label>
-                        <input type="text" id="team-category" placeholder="Ej. Sub-10" required>
-                    </div>
-                    <button type="submit" class="btn">Registrar Equipo</button>
-                </form>
-            </div>
+        
+        <section id="modulo-registro" class="modulo-section">
+            <h2 class="section-title">Panel de Control Administrativo</h2>
+            
+            <div class="workspace">
+                <div class="card form-card">
+                    <h3>Registrar Jugador</h3>
+                    <form id="jugador-form">
+                        <div class="form-group">
+                            <label for="temporada">Temporada</label>
+                            <select id="temporada" required>
+                                <option value="2026">Temporada 2026</option>
+                                <option value="2026-2027">Temporada 2026-2027</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="equipo">Equipo</label>
+                            <input type="text" id="equipo" placeholder="Ej. Mexiquito FC" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">Nombre del Jugador</label>
+                            <input type="text" id="nombre" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="anio-nacimiento">Año de Nacimiento</label>
+                                <input type="number" id="anio-nacimiento" min="2010" max="2026" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="numero">Número (#)</label>
+                                <input type="number" id="numero" min="1" max="99" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="foto" class="custom-file-upload">📸 Cargar Foto del Jugador</label>
+                            <input type="file" id="foto" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="btn-submit">Guardar Registro</button>
+                    </form>
+                </div>
 
-            <div class="card">
-                <h2>Agregar Jugador</h2>
-                <form id="player-form">
-                    <div class="form-group">
-                        <label for="player-name">Nombre del Jugador:</label>
-                        <input type="text" id="player-name" placeholder="Ej. Juan Pérez" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="player-age">Edad:</label>
-                        <input type="number" id="player-age" min="4" max="15" placeholder="Ej. 9" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="player-team">Asignar a Equipo:</label>
-                        <select id="player-team" required>
-                            <option value="" disabled selected>Selecciona un equipo</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-secondary">Inscribir Jugador</button>
-                </form>
+                <div class="card list-card">
+                    <h3>Lista Preliminar (Temporada Actual)</h3>
+                    <div id="lista-preliminar" class="player-grid-mini">
+                        </div>
+                </div>
             </div>
         </section>
 
-        <section class="display-section">
-            <h2>Estructura de la Liga</h2>
-            <div id="teams-container" class="teams-grid">
+        <section id="modulo-plantilla" class="modulo-section hidden">
+            <div class="section-header-inline">
+                <button class="btn-back" onclick="cambiarModulo('registro')">← Volver al Registro</button>
+                <h2 class="section-title">Plantilla General de Jugadores</h2>
+            </div>
+            
+            <div class="filter-bar">
+                <input type="text" id="search-plantilla" placeholder="Buscar por equipo o jugador..." oninput="filtrarPlantilla()">
+            </div>
+
+            <div id="plantilla-completa-grid" class="player-grid-full">
                 </div>
         </section>
+
     </main>
 
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>
