@@ -153,13 +153,6 @@ window.filtrarPlantilla = function() {
     filtrados.forEach(jugador => renderizarTarjeta(jugador, plantillaCompletaGrid));
 };
 
-// Referencia de UI
-const jugadorForm = document.getElementById('jugador-form');
-const listaPreliminar = document.getElementById('lista-preliminar');
-const plantillaCompletaGrid = document.getElementById('plantilla-completa-grid');
-
-let todosLosJugadores = []; // Almacén local para búsquedas rápidas
-
 // CAMBIAR DE MÓDULO (Navegación)
 window.cambiarModulo = function(modulo) {
     if(modulo === 'registro') {
