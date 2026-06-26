@@ -1,7 +1,3 @@
-// 1. Importar las funciones necesarias de los SDK de Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
 // 2. Configuración de Firebase de tu web app (REEMPLAZA ESTO CON TUS DATOS)
 const firebaseConfig = {
     apiKey: "AIzaSyCeZwffjdMJScGt4kCAtnfpSgBqzBVtoMI",
