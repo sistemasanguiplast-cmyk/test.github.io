@@ -1,18 +1,4 @@
 
-// CONFIGURACIÓN DE TU PROYECTO FIREBASE
-const firebaseConfig = {
-    apiKey: "AIzaSyCLAW1XF5BHDB_-4pw7rVDLklVfiuIo6Zo",
-    authDomain: "ligainfantilarandas-24843.firebaseapp.com",
-    projectId: "ligainfantilarandas-24843",
-    storageBucket: "ligainfantilarandas-24843.firebasestorage.app",
-    messagingSenderId: "1034062664324",
-    appId: "1:1034062664324:web:2400493fea676e1ff968d1",
-    measurementId: "G-CBP7V18WN0"
-  };
-// Inicializar Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.getFirestore(app)// app.js
-
 // 1. IMPORTACIONES DE FIREBASE (Sintaxis Modular v9/v10)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
 import { 
