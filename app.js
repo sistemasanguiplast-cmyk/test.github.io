@@ -152,7 +152,6 @@ window.filtrarPlantilla = function() {
 
     filtrados.forEach(jugador => renderizarTarjeta(jugador, plantillaCompletaGrid));
 };
-const storage = firebase.getStorage(app);
 
 // Referencia de UI
 const jugadorForm = document.getElementById('jugador-form');
